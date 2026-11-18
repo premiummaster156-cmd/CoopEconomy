@@ -132,13 +132,6 @@ module.exports = [
   },
   {
     category: "fun",
-    data: new SlashCommandBuilder().setName("coinflip").setDescription("Flip a coin (no bet)."),
-    async execute(interaction) {
-      await interaction.reply({ embeds: [success("🪙", `**${Math.random() < 0.5 ? "Heads" : "Tails"}**!`)] });
-    },
-  },
-  {
-    category: "fun",
     data: new SlashCommandBuilder().setName("dice").setDescription("Roll a die (no bet).").addIntegerOption((o) => o.setName("sides").setDescription("Sides")),
     async execute(interaction) {
       const sides = interaction.options.getInteger("sides") || 6;
