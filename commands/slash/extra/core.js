@@ -132,7 +132,7 @@ module.exports = [
   },
   {
     category: "fun",
-    data: new SlashCommandBuilder().setName("dice").setDescription("Roll a die (no bet).").addIntegerOption((o) => o.setName("sides").setDescription("Sides")),
+    data: new SlashCommandBuilder().setName("diceroll").setDescription("Roll a die without betting.").addIntegerOption((o) => o.setName("sides").setDescription("Sides")),
     async execute(interaction) {
       const sides = interaction.options.getInteger("sides") || 6;
       await interaction.reply({ embeds: [success("🎲", `d${sides}: **${Math.floor(Math.random() * sides) + 1}**`)] });
