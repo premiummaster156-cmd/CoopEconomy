@@ -1,20 +1,30 @@
 {
   "name": "coopeconomy",
-  "version": "1.0.0",
-  "description": "CoopEconomy — economy & gambling bot with 60+ slash commands and 40+ prefix commands.",
+  "version": "2.0.0",
+  "description": "CoopEconomy — a modern slash-command Discord economy and virtual currency bot.",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
     "start": "node index.js",
-    "deploy": "node deploy-commands.js",
+    "deploy": "node deploy-commands.js --global",
     "register:guild": "node deploy-commands.js --guild",
+    "check:commands": "node deploy-commands.js --check",
     "dev": "node index.js"
   },
-  "engines": { "node": ">=18.0.0" },
-  "keywords": ["discord", "bot", "economy", "currency", "gambling", "coopeconomy"],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "economy",
+    "currency",
+    "gambling",
+    "coopeconomy"
+  ],
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.15.3",
+    "discord.js": "^14.28.1",
     "dotenv": "^16.4.5"
   }
 }
