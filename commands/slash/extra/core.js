@@ -131,16 +131,6 @@ module.exports = [
     },
   },
   {
-    category: "utility",
-    data: new SlashCommandBuilder().setName("leaderboard").setDescription("View the economy leaderboard."),
-    async execute(interaction) {
-      const top = store.getLeaderboard(interaction.guild.id, 10);
-      if (top.length === 0) return interaction.reply({ embeds: [error("Empty", "No balances yet.")] });
-      const text = top.map((e, i) => `**${i + 1}.** <@${e.userId}> — ${e.balance.toLocaleString()} ${config.currency}`).join("\n");
-      await interaction.reply({ embeds: [new EmbedBuilder().setTitle("🏆 Leaderboard").setColor(config.colors.primary).setDescription(text)] });
-    },
-  },
-  {
     category: "fun",
     data: new SlashCommandBuilder().setName("coinflip").setDescription("Flip a coin (no bet)."),
     async execute(interaction) {
